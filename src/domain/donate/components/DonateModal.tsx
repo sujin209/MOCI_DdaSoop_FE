@@ -95,7 +95,7 @@ function DonateModal({
     };
   }, [onClose]);
 
-  if (!memberId) return;
+  if (!memberId) return null;
 
   const handleAmount = (money: string) => {
     setSelected(money);

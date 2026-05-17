@@ -34,7 +34,7 @@ export const usePostImage = (
 
 			const formData = new FormData();
 			compressedFiles.forEach((file) => formData.append("files", file));
-			const { data } = await api.post("api/images/upload-multiple", formData);
+			const { data } = await api.post("/api/images/upload-multiple", formData);
 			return data;
 		},
 		...options,

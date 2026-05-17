@@ -17,7 +17,7 @@ export const useSetComment = (id: number, userId?: number) => {
   return useMutation({
     mutationKey: ["setComment"],
     mutationFn: async (commentItem: CommentCreateRequest) => {
-      const res = await api.post("api/comments", {
+      const res = await api.post("/api/comments", {
         ...commentItem,
       });
       return res.data;

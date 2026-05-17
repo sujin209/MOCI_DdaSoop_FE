@@ -7,7 +7,7 @@ export const useGetRecentNotification = (isLogin: boolean) => {
   return useQuery<NotificationSummaryResponse[]>({
     queryKey: queryKeys.notifications.recent,
     queryFn: async () => {
-      const { data } = await api.get("api/notifications/recent", {
+      const { data } = await api.get("/api/notifications/recent", {
         params: { limit: 3 },
       });
       return data;

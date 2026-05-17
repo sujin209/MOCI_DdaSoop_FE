@@ -46,14 +46,14 @@ function DonateNews({ id }: { id: string }) {
       ) : (
         <div className="w-full">
           <p
-            className={data.data.id ? "" : "text-gray-500 text-center"}
+            className={data?.data.id ? "" : "text-gray-500 text-center"}
             dangerouslySetInnerHTML={{
-              __html: data.data.id
-                ? sanitizeHtml(data.data.description ?? "")
+              __html: data?.data.id
+                ? sanitizeHtml(data?.data.description ?? "")
                 : "작성된 소식이 없습니다",
             }}
           ></p>
-          <p className="w-full text-sm text-gray-500">{data.data.title}</p>
+          <p className="w-full text-sm text-gray-500">{data?.data.title}</p>
         </div>
       )}
       {!pendingNews &&
