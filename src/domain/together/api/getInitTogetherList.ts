@@ -10,9 +10,12 @@ export const getInitTogetherList = async ({
   fixed?: boolean;
   randomList?: string;
 } = {}) => {
+  if(fixed && !randomList) {
+    throw new Error("fixed가 true일 때는 randomList 값이 필요합니다.");
+  }
   const res = await serverFetchApi(
     `/api/v1/together/list?page=0&${fixed ? `size=3&sortType=${getKeyByValue(sortType, randomList!)}` : "size=12"}`,
-    { cache: "no-cache" },
+    fixed ?  {next : {revalidate: 300}}:{ cache: "no-cache" } ,
   );
 
   if (!res.ok) {

@@ -27,7 +27,7 @@ export const usePostReport = (
 	return useMutation({
 		...options,
 		mutationFn: async (reportData: ReportCreateRequest) => {
-			const { data } = await api.post("api/reports", reportData);
+			const { data } = await api.post("/api/reports", reportData);
 			return data;
 		},
 		onSuccess: (data, variables, context, mutation) => {

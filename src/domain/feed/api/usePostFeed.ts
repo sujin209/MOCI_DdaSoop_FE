@@ -22,7 +22,7 @@ export const usePostFeed = (
   return useMutation({
     ...options,
     mutationFn: async (feedData: FeedCreateRequest) => {
-      const { data } = await api.post("api/feeds", feedData);
+      const { data } = await api.post("/api/feeds", feedData);
       return data;
     },
     onSuccess: (data, variables, context, mutation) => {
