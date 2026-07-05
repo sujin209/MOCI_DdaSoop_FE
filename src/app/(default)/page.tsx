@@ -8,6 +8,26 @@ import FeedCreateButton from "@/domain/feed/components/FeedCreateButton";
 import { getInitTogetherList } from "@/domain/together/api/getInitTogetherList";
 import { sortOptions } from "@/shared/constants/filter";
 import { getDonationSummary } from "@/domain/donate/api/getDonationSummary";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "메인페이지",
+  description: "개인 맞춤형 피드 목록과 추천 활동을 확인할 수 있는 메인 페이지입니다.",
+  openGraph: {
+    title: "메인페이지",
+    description: "개인 맞춤형 피드 목록과 추천 활동을 확인할 수 있는 메인 페이지입니다.",
+    url: "https://www.ddasoop.xyz",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "따숲 메인페이지",
+      },
+    ],
+  },
+};
+
 
 export default async function Home({
   searchParams,
