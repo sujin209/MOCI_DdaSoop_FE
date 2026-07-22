@@ -10,6 +10,7 @@ import {
 } from "react-icons/bs";
 import { PositionedItem } from "./FeedCardContainer";
 import { sanitizeHtml } from "@/shared/utils/sanitizeHtml";
+import { useState } from "react";
 
 type FeedCardImageProps = {
 	item: PositionedItem;
@@ -26,7 +27,6 @@ function FeedCardImage({
 }: FeedCardImageProps) {
 	const {
 		id,
-		thumbnailUrl: src = "/defaultFeedImage.png",
 		width,
 		thumbnailWidth: imageWidth = 500,
 		thumbnailHeight: imageHeight = 500,
@@ -40,6 +40,9 @@ function FeedCardImage({
 		isPinned,
 		isReacted,
 	} = item;
+
+	const [src, setSrc] = useState( item.thumbnailUrl ?? "/defaultFeedImage.png");
+
 
 	const aspectRatio = imageWidth / imageHeight;
 	const height = width / aspectRatio;
@@ -110,6 +113,7 @@ function FeedCardImage({
 
 			<Image
 				src={src}
+				onError={() => setSrc("/defaultFeedImage.png" )}
 				alt={alt}
 				fill
 				className="object-contain z-0"
