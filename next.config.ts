@@ -17,6 +17,36 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "file.ddasoop.xyz", // 사용자 업로드
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "file.ddassop.xyz", // 사용자 업로드 - 현재오류url
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "ssl.pstatic.net", // 프로필 없는 사용자 기본이미지
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "k.kakaocdn.net", // 카카오
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "img1.kakaocdn.net", // 카카오
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 
